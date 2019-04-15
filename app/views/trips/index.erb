@@ -3,6 +3,7 @@
 <%@trips.each do |trip|%>
   <h3><li><%=link_to trip.trip_name, trip_path(trip)%></li></h3>
   <p><%=trip.description%><p>
+    <p><%=link_to "Add to list."%></p>
 <%end%>
 </ol>
 <br>
