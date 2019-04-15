@@ -1,0 +1,6 @@
+<h1>Here's the trip!</h1>
+
+<h2><%=@trip.trip_name%></h2>
+<h3>Description: <%=@trip.description%> </h3>
+<h3>Guide Company: <%=link_to @trip.guide_comp.guide_comp_name, guide_comp_path(@trip.guide_comp)%></h3>
+<!-- comp_name -->

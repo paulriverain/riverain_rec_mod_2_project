@@ -1,0 +1,5 @@
+<h1>Guide Companies</h1>
+
+<%@comps.each do |comp|%>
+<h4><%=link_to comp.guide_comp_name, guide_comp_path(comp.id)%></h4>
+<%end%>

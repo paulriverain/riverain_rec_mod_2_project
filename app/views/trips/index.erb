@@ -1,0 +1,12 @@
+<h1>List all trips here</h1>
+<ol>
+<%@trips.each do |trip|%>
+  <h3><li><%=link_to trip.trip_name, trip_path(trip)%></li></h3>
+  <p><%=trip.description%><p>
+<%end%>
+</ol>
+<br>
+<br>
+<br>
+<%# <%=button_to "User", users_path(@trip.user), method: :get%> %>
+<%# '/users/new' %>
