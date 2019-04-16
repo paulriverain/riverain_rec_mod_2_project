@@ -1,13 +1,14 @@
 <h1>List all trips here</h1>
+<%=flash[:notice]%>
 <ol>
 <%@trips.each do |trip|%>
-  <h3><li><%=link_to trip.trip_name, trip_path(trip)%></li></h3>
-  <p><%=trip.description%><p>
-    <p><%=link_to "Add to list."%></p>
+  <h3><li><%=link_to trip.trip_name, trip_path(trip)%> </li></h3>
+  <p>Description:  <%=trip.description%></p>
+   <%=button_to "Add to list:", '/likes', {method: :patch,  params: {trip_id: trip.id}}%>
+  <br><br>
 <%end%>
 </ol>
 <br>
 <br>
 <br>
-<%# <%=button_to "User", users_path(@trip.user), method: :get%> %>
-<%# '/users/new' %>
+<%# <%=button_to "User", user_path, method: :get%> %>

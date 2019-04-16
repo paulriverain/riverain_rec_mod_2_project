@@ -1,8 +1,11 @@
 class TripsController < ApplicationController
   def index
+
     @trips = Trip.all
+    add_to_trips(@user)
     # @current_user = signed_in
     # @trips = @current_user.trips.all
+
   end
 
   def show

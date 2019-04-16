@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show'
   #
-  # resources :users, only: [:new, :create]
+
+  patch '/likes', to: 'likes#update'
+
+  # resources :users, only: [:new, :create, :show]
   # get '/users/new', to: 'users#new'
   # post '/users', to: 'users#create'
   # get '/users/:id', to: 'users#show'

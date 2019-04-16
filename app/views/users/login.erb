@@ -4,9 +4,7 @@
 <H2>Login</h2>
 
 <%if flash[:errors]%>
-  <% flash[:errors].each do |error|%>
-    <%= error %>
-  <%end%>
+    <%= flash[:errors] %>
 <%end%>
 
 <%=form_for(@user, url: login_path) do |f|%>
@@ -14,6 +12,9 @@
 <%=f.text_field :user_name%>
 <h3><%=f.label "Password:"%></h3>
 <%=f.submit 'Login'%>
-
 <%end%>
+
+
+<br>
+<br>
 <%=button_to 'New User', users_new_path, {method: :get}%>

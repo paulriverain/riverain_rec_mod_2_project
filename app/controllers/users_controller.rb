@@ -6,34 +6,52 @@ class UsersController < ApplicationController
 
   def login_to
     @user = User.find_by(get_params)
-    if @user.valid?
+    if @user
       redirect_to trips_path
     else
-      flash[:errors] = @user.errors.full_messages
+      flash[:errors] = "Improper Username or Password:"
       redirect_to login_path
     end
   end
+
 
   def new
     @user = User.new
   end
 
   def create
-  
     @user = User.create(get_params)
-    redirect_to trips_path
+    if @user.valid?
+      redirect_to trips_path
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to users_new_path
+    end
   end
 
+
   def show
-    @user = User.find_by(get_params)
-    # @user = User.find(params[:id])
+    @user = User.find(get_params)
   end
+
+
+  # 
+  # def edit
+  #   #code
+  #     @user = User.find(get_params)
+  # end
+
+  # def update
+  #   #code
+  #   flash[:notice] = "Added to trips"
+  #   add_to_trips(@trip.id)
+  # end
 
 
 
 private
 
-def get_params
+  def get_params
     params.require(:user).permit(:user_name)
   end
 
