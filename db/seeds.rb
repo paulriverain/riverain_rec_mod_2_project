@@ -10,9 +10,10 @@ User.destroy_all
 GuideComp.destroy_all
 Trip.destroy_all
 
-jim = User.create(user_name: 'Jim')
-sam = User.create(user_name: 'Sam')
-ben = User.create(user_name: 'Ben')
+jim = User.create(user_name: 'Jim', password: '1')
+sam = User.create(user_name: 'Sam', password: '2')
+ben = User.create(user_name: 'Ben', password: '3')
+paul = User.create(user_name: 'Paul', password: '123')
 
 op = GuideComp.create(guide_comp_name: 'Outdoor Pursuits')
 rei = GuideComp.create(guide_comp_name: 'REI')

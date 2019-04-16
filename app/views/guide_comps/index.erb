@@ -3,3 +3,9 @@
 <%@comps.each do |comp|%>
 <h4><%=link_to comp.guide_comp_name, guide_comp_path(comp.id)%></h4>
 <%end%>
+
+
+
+<br>
+<br>
+<%=button_to 'Back to Trips Page', trips_path, {method: :get}%>

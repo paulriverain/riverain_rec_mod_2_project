@@ -1,16 +1,38 @@
 class ApplicationController < ActionController::Base
+  before_action :authorized
 
-  def likes
-    session[:likes] ||=[]
+
+  def reservations
+    session[:reservations] ||=[]
   end
-
 
   def add_to_trips(trip_id)
-  	likes << trip_id
+  	reservations << trip_id
   end
 
-  def show_the_likes
-     @liked_trips = likes
+  def show_the_reservations
+     @reserved_trips = reservations
   end
+
+
+
+  def current_user
+    # byebug
+    User.find_by({ id: session[:user_id] })
+  end
+
+  def logged_in?
+    !!current_user
+  end
+
+  def authorized #(always redirect you to login page)
+    redirect_to login_path unless logged_in?
+  end
+
+
+
+
+
+
 
 end

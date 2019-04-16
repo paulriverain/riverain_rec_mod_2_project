@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show'
   #
+  get '/users/:id/edit', to: 'users#edit'
+  post '/users/:id', to: 'users#update'
+  delete '/users/:id', to: 'users#destroy'
 
-  patch '/likes', to: 'likes#update'
+  # get '/users/:id', to: 'users#show'
+  post '/reservations', to: 'reservations#create'
 
   # resources :users, only: [:new, :create, :show]
   # get '/users/new', to: 'users#new'

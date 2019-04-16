@@ -1,20 +1,26 @@
-<h1>Riverain Recreation</h1>
+<div class="login_page">
+  <h1>Riverain Recreation</h1>
 
+  <br>
+  <H2>Login:</h2>
+  <div class="login">
+    <div id = 'error_flash'>
+      <%if flash[:errors]%>
+        <%= flash[:errors] %>
+      <%end%>
+    </div>
+    <div id = 'forms'>
+      <%=form_for(@user, url: login_path) do |f|%>
+        <h3><%=f.label "User Name:"%>
+          <%=f.text_field :user_name%></h3>
+        <h3><%=f.label "Password:"%>
+          <%=f.password_field :password%></h3>
+        <%=f.submit '   Login   '%>
+      <%end%>
+    </div>
+  </div>
+  <br>
+  <br>
 
-<H2>Login</h2>
-
-<%if flash[:errors]%>
-    <%= flash[:errors] %>
-<%end%>
-
-<%=form_for(@user, url: login_path) do |f|%>
-<h3><%=f.label "User Name:"%></h3>
-<%=f.text_field :user_name%>
-<h3><%=f.label "Password:"%></h3>
-<%=f.submit 'Login'%>
-<%end%>
-
-
-<br>
-<br>
-<%=button_to 'New User', users_new_path, {method: :get}%>
+  <%=button_to 'Create New User', users_new_path, {method: :get}%>
+</div>
