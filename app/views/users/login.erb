@@ -1,13 +1,10 @@
 <div class="login_page">
   <h1>Riverain Recreation</h1>
 
-  <br>
   <H2>Login:</h2>
   <div class="login">
     <div id = 'error_flash'>
-      <%if flash[:errors]%>
-        <%= flash[:errors] %>
-      <%end%>
+        <%=flash[:notice]%>
     </div>
     <div id = 'forms'>
       <%=form_for(@user, url: login_path) do |f|%>

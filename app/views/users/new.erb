@@ -10,8 +10,8 @@
 <h3><%=f.label "Create User Name:"%></h3>
 <%=f.text_field :user_name%>
 <h3><%=f.label "Create a Password:"%></h3>
-<%=f.password_field :password%>
-<%=f.submit 'Create'%>
+<p><%=f.password_field :password%></p>
+<%=f.submit 'Create Account'%>
 <%end%>
-
+<br>
 <%=button_to 'Back to Login', login_path, {method: :get}%>

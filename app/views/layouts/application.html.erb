@@ -10,6 +10,12 @@
   </head>
 
   <body>
+
+      <div class = 'header buttons'>
+        <%# <%=button_to 'Back to Login', login_path, {method: :get}%>
+        <%=button_to 'Logout', logout_path, methods: :delete%>
+        <%=button_to 'Trips Page', trips_path, {method: :get}%>
+      </div>
     <%= yield %>
   </body>
 </html>
