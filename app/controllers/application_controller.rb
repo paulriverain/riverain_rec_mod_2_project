@@ -2,17 +2,17 @@ class ApplicationController < ActionController::Base
   before_action :authorized
 
 
-  def reservations
-    session[:reservations] ||=[]
-  end
-
-  def add_to_trips(trip_id)
-  	reservations << trip_id
-  end
-
-  def show_the_reservations
-     @reserved_trips = reservations
-  end
+  # def reservations
+  #   session[:reservations] ||=[]
+  # end
+  #
+  # def add_to_trips(trip_id)
+  # 	reservations << trip_id
+  # end
+  # 
+  # def show_the_reservations
+  #    @reserved_trips = reservations
+  # end
 
   def current_user
     # byebug

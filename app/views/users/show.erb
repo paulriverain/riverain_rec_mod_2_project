@@ -2,9 +2,10 @@
 
 <h3><%=@user.user_name%></h3>
 <ol>
-<% @reserved_trips.uniq.each do |trip|%>
-  <li><%=trip.trip_name%></li>
-  <%= button_to "Remove", remove_reservation_path, method: :delete%>
+<% @user.reservations.uniq.each do |reservation|%>
+  <li><%=reservation.trip.trip_name%></li>
+
+  <%= button_to "Remove", remove_reservation_path(reservation), method: :delete%>
 <%end%>
 </ol>
 <%=button_to 'Edit Profile', edit_user_path, method: :get%>

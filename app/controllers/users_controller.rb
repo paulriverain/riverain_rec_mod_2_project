@@ -38,7 +38,6 @@ class UsersController < ApplicationController
 
   def show
     get_user
-    @reserved_trips = @user.trips
   end
 
 
@@ -47,7 +46,6 @@ class UsersController < ApplicationController
   end
 
   def update
-
     @user = User.find(params[:id])
     @user.update(get_params)
     if @user
@@ -59,18 +57,23 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy #Log out
     session[:user_id] = nil
     flash[:notice] = 'You are logged out.'
     redirect_to login_path
   end
+
+  # def delete_account #trash_account
+  #   @reservation = Reservation.all
+  #   @reservation.destroy
+  #
+  # end
 
 
 private
   def get_user
     @user = User.find(params[:id])
   end
-
 
   def get_params
     params.require(:user).permit(:user_name, :password)
