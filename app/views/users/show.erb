@@ -1,6 +1,8 @@
 <h1>Profile Page</h1>
 
-<h3><%=@user.user_name%></h3>
+<h3><%=@user_now.user_name%></h3>
+
+<%=flash[:notice]%>
 <ol>
 <% @user.reservations.uniq.each do |reservation|%>
   <li><%=reservation.trip.trip_name%></li>
@@ -9,3 +11,5 @@
 <%end%>
 </ol>
 <%=button_to 'Edit Profile', edit_user_path, method: :get%>
+<%# <%=button_to 'Delete All Trips', trash_trips_path%>
+<%# user_path(@user_now.id) %>

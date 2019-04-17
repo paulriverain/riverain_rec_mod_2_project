@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # def add_to_trips(trip_id)
   # 	reservations << trip_id
   # end
-  # 
+  #
   # def show_the_reservations
   #    @reserved_trips = reservations
   # end
@@ -18,6 +18,8 @@ class ApplicationController < ActionController::Base
     # byebug
     User.find_by({ id: session[:user_id] })
   end
+
+
 
   def logged_in? #makes curent user reflect it's boolean
     !!current_user

@@ -38,17 +38,30 @@ class UsersController < ApplicationController
 
   def show
     get_user
+    # byebug
+    if current_user.id != @user.id
+      redirect_to login_path
+    else
+      @user_now = current_user
+      # get_user
+    end
   end
 
 
   def edit
-      get_user
+    get_user
+    if current_user.id != @user.id
+      redirect_to login_path
+    else
+      @user_now = current_user
+    end
   end
 
   def update
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
+    get_user
     @user.update(get_params)
-    if @user
+    if @user.valid?
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
@@ -63,11 +76,26 @@ class UsersController < ApplicationController
     redirect_to login_path
   end
 
-  # def delete_account #trash_account
-  #   @reservation = Reservation.all
-  #   @reservation.destroy
-  #
-  # end
+  def clear_account #trash_account
+    get_user
+    Reservation.where(user_id: @user.id).destroy_all
+    flash[:notice] = 'Your trips have been cleared'
+    redirect_to user_path
+  end
+
+
+  def delete_account #deletes_account
+    get_user
+    Reservation.where(user_id: @user.id).destroy_all
+    # flash[:notice] = 'Your trips have been cleared'
+
+    User.destroy(@user.id)
+    # byebug
+    redirect_to login_path
+    # Reservation.find_by(user_id: 4).all
+
+  end
+
 
 
 private

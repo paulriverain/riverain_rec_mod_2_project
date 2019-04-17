@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   post '/users/:id/edit', to: 'users#update'
   delete '/users/:id', to: 'users#destroy'
 
+  # post '/users/:id', to: 'users#delete_all_trips', as: 'trash_trips'
+  delete '/users/:id/clear', to: 'users#clear_account', as: 'trash_account'
+
+  delete '/users/:id/edit', to: 'users#delete_account', as: 'delete_account'
+
+
 
   post '/reservations', to: 'reservations#create'
   delete '/reservations/:id', to: 'reservations#destroy', as: 'remove_reservation'
@@ -17,7 +23,6 @@ Rails.application.routes.draw do
 
   get '/login', to: 'users#login'
   post '/login', to: 'users#login_to'
-  delete '/login', to: 'users#delete_account', as: 'trash_account'
 
   post '/logout', to: 'users#destroy', as: 'logout'
 end
