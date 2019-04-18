@@ -4,18 +4,25 @@
     <title>RiverainRec</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <ul>
+      <li><a href="/trips">Trips Page</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li style="float:right"><a class="active" href="/logout" data-method="post">Logout</a></li>
+    </ul>
 
-      <div class = 'header buttons'>
+
+
+
         <%# <%=button_to 'Back to Login', login_path, {method: :get}%>
-        <%=button_to 'Logout', logout_path, methods: :delete%>
-        <%=button_to 'Trips Page', trips_path, {method: :get}%>
-      </div>
+        <%# <%=button_to 'Logout', logout_path, methods: :post%>
+        <%# <%=button_to 'Trips Page', trips_path, {method: :get}%> 
     <%= yield %>
   </body>
 </html>

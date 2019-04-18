@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   resources :trips, only: [:index, :show, :destroy]
   resources :guide_comps, only: [:index, :show]
 
+  get '/unbooked', to: 'trips#unbooked', as: 'unbooked'
+
+
   get '/login', to: 'users#login'
   post '/login', to: 'users#login_to'
 

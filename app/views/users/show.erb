@@ -1,17 +1,22 @@
-<h1>Profile Page</h1>
+<div class="page">
+  <h1><%=@user_now.user_name%>'s Profile Page</h1>
 
-<h3><%=@user_now.user_name%></h3>
-<%=button_to 'Edit Profile', edit_user_path, method: :get%>
+  <h3><%=@user_now.user_name%></h3>
+  <%=button_to 'Edit Profile', edit_user_path, method: :get%>
 
-<%=flash[:notice]%>
+  <%=flash[:notice]%>
 
-<h4>Trip List:</h4>
-<ol>
-<%@user.reservations.each do |reservation|%>
-  <li><%=reservation.trip.trip_name%></li>
-  <%= button_to "Remove", remove_reservation_path(reservation), method: :delete%>
-  <br />
-<%end%>
-</ol>
-<%# <%=button_to 'Delete All Trips', trash_trips_path%>
-<%# user_path(@user_now.id) %>
+  <h4>Trip List:</h4>
+    <div class="trips-container">
+      <ol>
+      <%@user_now.reservations.each do |reservation|%>
+          <div class="trip-card">
+            <br />
+            <h3><li><%=reservation.trip.trip_name%></li></h3>
+            <%= button_to "Remove", remove_reservation_path(reservation), method: :delete%>
+            <br />
+          </div>
+      <%end%>
+      </ol>
+    </div>
+</div>

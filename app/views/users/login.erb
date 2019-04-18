@@ -1,23 +1,25 @@
-<div class="login_page">
-  <h1>Riverain Recreation</h1>
 
-  <H2>Login:</h2>
-  <div class="login">
-    <div id = 'error_flash'>
-        <%=flash[:notice]%>
-    </div>
-    <div id = 'forms'>
-      <%=form_for(@user, url: login_path) do |f|%>
-        <h3><%=f.label "User Name:"%>
-          <%=f.text_field :user_name%></h3>
-        <h3><%=f.label "Password:"%>
-          <%=f.password_field :password%></h3>
-        <%=f.submit '   Login   '%>
-      <%end%>
-    </div>
+<div class="page">
+  <div class="title">
+    <h1>Riverain Recreation</h1>
   </div>
+  <br />
+  <h2>Login:</h2>
+    <%=flash[:notice]%>
+    <div class="forms-container">
+      <div class="forms-card">
+        <%=form_for(@user, url: login_path) do |f|%>
+          <br />
+          <h4><%=f.label "User Name:"%></h4>
+            <%=f.text_field :user_name%>
+          <h4><%=f.label "Password:"%></h4>
+            <p><%=f.password_field :password%></p>
+          <%=f.submit '          Login          '%>
+        <%end%>  <%=button_to 'Create New User', users_new_path, {method: :get}%>
+      </div>
+    </div>
   <br>
   <br>
-
-  <%=button_to 'Create New User', users_new_path, {method: :get}%>
+  <%# <%= link_to "trips", trips_path, :class => "btn btn-primary"%>
+  <%# <%=button_to 'Create New User', users_new_path, {method: :get}%>
 </div>

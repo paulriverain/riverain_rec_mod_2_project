@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def login
     @user = User.new
-    render :layout => false
   end
 
   def login_to
@@ -18,10 +17,8 @@ class UsersController < ApplicationController
      end
   end
 
-
   def new
     @user = User.new
-    render :layout => false
   end
 
   def create
@@ -37,9 +34,8 @@ class UsersController < ApplicationController
 
 
   def show
-    get_user
     # byebug
-    if current_user.id != @user.id
+    if current_user.id != params[:id].to_i
       redirect_to login_path
     else
       @user_now = current_user

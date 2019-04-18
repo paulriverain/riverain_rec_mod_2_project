@@ -1,0 +1,13 @@
+<div class="trips-wrapper">
+  <h1>These ain't booked</h1>
+
+  <div class="trips-container">
+    <%@nottrips.each do |nottrip|%>
+      <div class="trip-card">
+        <h3><%=nottrip.trip_name %></h3>
+        <p><%=nottrip.description%></p>
+        <br>
+      </div>
+    <%end%>
+  </div>
+</div>
