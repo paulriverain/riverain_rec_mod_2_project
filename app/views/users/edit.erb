@@ -11,7 +11,7 @@
   <%end%>
 <%end%>
 
-<%=form_for :user do |f|%>
+<%=form_for @user do |f|%>
 <h3><%=f.label "Edit User Name:"%></h3>
 <%=f.text_field :user_name%>
 <h3><%=f.label "Edit a Password:"%></h3>
@@ -19,9 +19,8 @@
 <%=f.submit 'Update'%>
 <%end%>
 
-
 <br><br><br>
-<%=button_to 'Clear All Trips',  "/users/#{@user_now.id}/clear", method: :delete%>
+<%=button_to 'Clear All Trips', "/users/#{@user_now.id}/clear", method: :delete%>
 <%# <%=button_to 'Back to Login', login_path, {method: :get}%>
 
 
