@@ -1,25 +1,33 @@
+<div class= login-backbackground>
 
-<div class="page">
-  <div class="title">
-    <h1>Riverain Recreation</h1>
-  </div>
-  <br />
-  <h2>Login:</h2>
-    <%=flash[:notice]%>
-    <div class="forms-container">
-      <div class="forms-card">
-        <%=form_for(@user, url: login_path) do |f|%>
-          <br />
-          <h4><%=f.label "User Name:"%></h4>
-            <%=f.text_field :user_name%>
-          <h4><%=f.label "Password:"%></h4>
-            <p><%=f.password_field :password%></p>
-          <%=f.submit '          Login          '%>
-        <%end%>  <%=button_to 'Create New User', users_new_path, {method: :get}%>
-      </div>
+  <div class="page">
+
+    <div class="title">
+      <br /><br />
+      <h1>Riverain Recreation</h1>
     </div>
-  <br>
-  <br>
-  <%# <%= link_to "trips", trips_path, :class => "btn btn-primary"%>
-  <%# <%=button_to 'Create New User', users_new_path, {method: :get}%>
+    <br />
+      <div class="login-forms-container">
+        <h2>Login:</h2>
+
+          <div class="flashy">
+            <%=flash[:notice]%>
+          </div>
+
+        <div class="login-forms-card">
+          <%=form_for(@user, url: login_path) do |f|%>
+            <br />
+            <h4><%=f.label "User Name:"%></h4>
+              <%=f.text_field :user_name%>
+            <h4><%=f.label "Password:"%></h4>
+              <p><%=f.password_field :password%></p>
+            <%=f.submit '          Login          '%>
+          <%end%> <br> <%=button_to 'Create New User', users_new_path, {method: :get}%>
+        </div>
+      </div>
+    <br>
+    <br>
+    <%# <%= link_to "trips", trips_path, :class => "btn btn-primary"%>
+    <%# <%=button_to 'Create New User', users_new_path, {method: :get}%>
+  </div>
 </div>

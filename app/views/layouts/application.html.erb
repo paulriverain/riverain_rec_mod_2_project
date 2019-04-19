@@ -10,19 +10,21 @@
   </head>
 
   <body>
+
+  <%if @user_now != nil%>
     <ul>
       <li><a href="/trips">Trips Page</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="/users/<%=@user_now.id%>">Profile</a></li>
+      <li><a href="/users/<%=@user_now.id%>/edit">Edit</a></li>
       <li style="float:right"><a class="active" href="/logout" data-method="post">Logout</a></li>
     </ul>
-
+  <%end%>
 
 
 
         <%# <%=button_to 'Back to Login', login_path, {method: :get}%>
         <%# <%=button_to 'Logout', logout_path, methods: :post%>
-        <%# <%=button_to 'Trips Page', trips_path, {method: :get}%> 
+        <%# <%=button_to 'Trips Page', trips_path, {method: :get}%>
     <%= yield %>
   </body>
 </html>

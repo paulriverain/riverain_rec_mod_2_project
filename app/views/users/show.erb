@@ -1,9 +1,10 @@
 <div class="page">
+  <br />
   <h1><%=@user_now.user_name%>'s Profile Page</h1>
 
-  <h3><%=@user_now.user_name%></h3>
+  <%# <%=@user_now.user_name%>
   <%=button_to 'Edit Profile', edit_user_path, method: :get%>
-
+  <br />
   <%=flash[:notice]%>
 
   <h4>Trip List:</h4>
@@ -13,7 +14,9 @@
           <div class="trip-card">
             <br />
             <h3><li><%=reservation.trip.trip_name%></li></h3>
-            <%= button_to "Remove", remove_reservation_path(reservation), method: :delete%>
+              <div class="removebtm">
+              <%= button_to "Remove", remove_reservation_path(reservation), method: :delete%>
+              </div>
             <br />
           </div>
       <%end%>

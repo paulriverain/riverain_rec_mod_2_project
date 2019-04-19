@@ -1,17 +1,34 @@
-<h1>Create Account</h1>
+<div class= login-backbackground>
 
-<%if flash[:errors]%>
-  <% flash[:errors].each do |error|%>
-    <%= error %>
-  <%end%>
-<%end%>
+  <div class="title">
+    <br /><br />
+    <h1>Riverain Recreation</h1>
+  </div>
+  <br />
+  <div class="page">
+    <div class="login-forms-container">
 
-<%=form_for @user do |f|%>
-  <h3><%=f.label "Create User Name:"%></h3>
-  <%=f.text_field :user_name%>
-  <h3><%=f.label "Create a Password:"%></h3>
-  <p><%=f.password_field :password%></p>
-  <%=f.submit 'Create Account'%>
-<%end%>
-<br>
-<%=button_to 'Back to Login', login_path, {method: :get}%>
+    <h2>Create Account</h2>
+
+      <div class="flashy">
+        <%if flash[:errors]%>
+          <% flash[:errors].each do |error|%>
+            <%= error %>
+          <%end%>
+        <%end%>
+      </div>
+
+      <div class="login-forms-card">
+        <%=form_for @user do |f|%>
+          <h4><%=f.label "Create User Name:"%></h4>
+          <%=f.text_field :user_name%>
+          <h4><%=f.label "Create a Password:"%></h4>
+          <p><%=f.password_field :password%></p>
+          <%=f.submit 'Create Account'%>
+        <%end%>
+        <br>
+      <%=button_to 'Back to Login', login_path, {method: :get}%>
+      </div>
+    </div>
+  </div>
+</div>

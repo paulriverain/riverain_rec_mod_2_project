@@ -1,11 +1,15 @@
-<h1>Guide Companies</h1>
+<div class="page">
+  <h1>Guide Companies</h1>
 
-<%@comps.each do |comp|%>
-<h4><%=link_to comp.guide_comp_name, guide_comp_path(comp.id)%></h4>
-<%end%>
+  <div class="trips-container">
+    <%@comps.each do |comp|%>
+      <div class="trip-card">
+        <h4><%=link_to comp.guide_comp_name, guide_comp_path(comp.id)%></h4>
+      </div>
+    <%end%>
+  </div>
 
-
-
-<br>
-<br>
-<%=button_to 'Back to Trips Page', trips_path, {method: :get}%>
+  <br>
+  <br>
+  <%=button_to 'Back to Trips Page', trips_path, {method: :get}%>
+</div>
