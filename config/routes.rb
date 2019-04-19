@@ -12,20 +12,15 @@ Rails.application.routes.draw do
 
   delete '/users/:id/edit', to: 'users#delete_account', as: 'delete_account'
 
-
-
   post '/reservations', to: 'reservations#create'
   delete '/reservations/:id', to: 'reservations#destroy', as: 'remove_reservation'
-
 
   resources :trips, only: [:index, :show, :destroy]
   resources :guide_comps, only: [:index, :show]
 
   get '/unbooked', to: 'trips#unbooked', as: 'unbooked'
 
-
   get '/login', to: 'users#login'
   post '/login', to: 'users#login_to'
-
   post '/logout', to: 'users#destroy', as: 'logout'
 end

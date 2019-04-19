@@ -1,10 +1,11 @@
 <div class="page">
   <!-- <h1>Here's the trip!</h1> -->
 
-  <br />
-  <h1><%=@trip.trip_name%></h1>
-  <h3>Description: <%=@trip.description%> </h3>
+
+  <h1><u><%=@trip.trip_name%></u>:</h1>
+  <h3><b>Description:</b> <%=@trip.description%> </h3>
   <h3>Guide Company: <%=link_to @trip.guide_comp.guide_comp_name, guide_comp_path(@trip.guide_comp)%></h3>
+  <br />
   <%=button_to "Add to my list", '/reservations', method: :post, params: {trip_id: @trip.id, user_id: @user_now.id}%>
   <br>
   <br>

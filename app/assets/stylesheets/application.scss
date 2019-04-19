@@ -13,25 +13,28 @@
  *= require_tree .
  */
  @import "bootstrap";
-
- ul {
+.profile-img {
+  
+}
+ .nav ul {
+   width: 100%;
    list-style-type: none;
    margin: 0;
    padding: 0;
    overflow: hidden;
    background-color: #333;
  }
- li {
+ .nav li {
    float: left;
  }
- li a {
+ .nav li a {
    display: block;
    color: white;
    text-align: center;
    padding: 14px 16px;
    text-decoration: none;
  }
- li a:hover:not(.active) {
+ .nav li a:hover:not(.active) {
    background-color: #111;
  }
 

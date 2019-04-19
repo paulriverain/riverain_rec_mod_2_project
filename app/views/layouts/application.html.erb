@@ -10,18 +10,21 @@
   </head>
 
   <body>
+  <div class="nav">
 
-  <%if @user_now != nil%>
+    <%if @user_now != nil%>
     <ul>
-      <li><a href="/trips">Trips Page</a></li>
-      <li><a href="/guide_comps">Guide Companies</a></li>
-      <li><a href="/users/<%=@user_now.id%>">Profile</a></li>
-      <li><a href="/users/<%=@user_now.id%>/edit">Edit Profile</a></li>
-      <li style="float:right"><a class="active" href="/logout" data-method="post">Logout</a></li>
-    </ul>
-  <%end%>
 
+        <li><a href="/trips">Trips Page</a></li>
+        <li><a href="/guide_comps">Guide Companies</a></li>
+        <li><a href="/users/<%=@user_now.id%>">Profile</a></li>
+        <li><a href="/users/<%=@user_now.id%>/edit">Edit Profile</a></li>
+        <li style="float:right"><a class="active" href="/logout" data-method="post">Logout</a></li>
+      </ul>
 
+      <%=image_tag("rr_pic.jpg", class: "profile-img",height: '132px', width: '132px')%>
+    <%end%>
+  </div>
 
         <%# <%=button_to 'Back to Login', login_path, {method: :get}%>
         <%# <%=button_to 'Logout', logout_path, methods: :post%>
