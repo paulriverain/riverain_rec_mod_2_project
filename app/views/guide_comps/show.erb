@@ -1,12 +1,13 @@
 <div class="page">
+  <br />
 <h1>Guide Company Page</h1>
 
 <h3><%=@comp.guide_comp_name%></h3>
 
-<h3>Company Id: <%=@comp.id%></h3>
+<h3>Company Id: <%=@comp.id%></h3><br />
 <%=button_to "See all Companies", "/guide_comps", method: :get%>
 
 <br>
-<br>
+
 <%=button_to 'Back to Trips Page', trips_path, {method: :get}%>
 </div>

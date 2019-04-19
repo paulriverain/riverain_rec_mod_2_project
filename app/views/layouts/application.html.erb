@@ -14,8 +14,9 @@
   <%if @user_now != nil%>
     <ul>
       <li><a href="/trips">Trips Page</a></li>
+      <li><a href="/guide_comps">Guide Companies</a></li>
       <li><a href="/users/<%=@user_now.id%>">Profile</a></li>
-      <li><a href="/users/<%=@user_now.id%>/edit">Edit</a></li>
+      <li><a href="/users/<%=@user_now.id%>/edit">Edit Profile</a></li>
       <li style="float:right"><a class="active" href="/logout" data-method="post">Logout</a></li>
     </ul>
   <%end%>
