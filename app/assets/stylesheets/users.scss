@@ -5,7 +5,7 @@
 .login-backbackground {
   background-image: url("https://wallpapercave.com/wp/lpIT0wI.jpg");
   background-color: #cccccc;
-  height: 800px;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,6 +35,7 @@
 }
 
 .login-forms-container {
+   min-width: 300px;
   opacity: 0.899;
   text-align: center;
   margin: auto;
